@@ -1,3 +1,3 @@
 # convert
-Converts the .dat ASCII files output from the CAEN to .hdf5 files for analysis. 
+Converts the ASCII files that are output from the CAEN to .hdf5 files for analysis. 
 
