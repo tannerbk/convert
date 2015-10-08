@@ -55,8 +55,9 @@ def get_dataset(f, ascii_filename, num_channels):
          channel_name = 'channel%d' % i
          print channel_name
          channel_info = parse_file(ascii_filename,i)
-     dataset = f.create_dataset(channel_name,data=channel_info,dtype='f4')
-     channel_info = np.empty([events,samples])
+         dataset = f.create_dataset(channel_name,data=channel_info,dtype='f4')
+         # clean up
+         channel_info = np.empty([events,samples])
      return dataset
 
 ''' Accept user inputs '''
@@ -71,3 +72,5 @@ if (__name__=="__main__"):
      f = h5py.File(args.hdf5_filename,'w')
      get_dataset(f,args.ascii_filename,args.num_channels)
      f.close()
+     print 'Writing to', 
+     print args.hdf5_filename
